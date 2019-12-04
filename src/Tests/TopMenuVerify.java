@@ -11,7 +11,6 @@ public class TopMenuVerify
 	public static void main(String[] args)
 	{
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.google.co.in");
 		
 		driver.get("http://newtours.demoaut.com/mercurywelcome.php");
 		

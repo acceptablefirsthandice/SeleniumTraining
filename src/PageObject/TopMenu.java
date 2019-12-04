@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import Utility.Element;
+
 /* This page level classes are used to represent page web elements and associated 
  * actions which could be reused as necessary in our test using the object of these classes
  * ---Lankesh 2/12/2019
@@ -26,11 +28,13 @@ public class TopMenu
 	//local webelement variables for loading the page elements.
 	static WebElement signOn, register, support, contact;
 	
+	static Element element;
 	
 	//d --> is the actual browser representation from the test case
 	public TopMenu(WebDriver driver)
 	{
 		this.driver = driver;
+		element = new Element();
 	}
 	
 	
@@ -38,26 +42,26 @@ public class TopMenu
 	//identification of sign-on webelement on the top menu
 	public static void signOn_link(String LocatorType, String LocatorValue)
 	{
-		signOn = driver.findElement(locator(LocatorType, LocatorValue));
+		signOn = driver.findElement(element.locator(LocatorType, LocatorValue));
 	}
 	
 	//identification of Register webelement on top menu
 	public static void register_link(String LocatorType, String LocatorValue)
 	{
-		register = driver.findElement(locator(LocatorType, LocatorValue));
+		register = driver.findElement(element.locator(LocatorType, LocatorValue));
 	}
 	
 	//identification of Support webelement on top menu
 		public static void support_link(String LocatorType, String LocatorValue)
 		{
-			support = driver.findElement(locator(LocatorType, LocatorValue));
+			support = driver.findElement(element.locator(LocatorType, LocatorValue));
 		}
 	
 
 		//identification of Support webelement on top menu
 		public static void contact_link(String LocatorType, String LocatorValue)
 		{
-			contact = driver.findElement(locator(LocatorType, LocatorValue));
+			contact = driver.findElement(element.locator(LocatorType, LocatorValue));
 		}
 		
 	//SignOn action
@@ -90,41 +94,7 @@ public class TopMenu
 		
 		
 	
-	public static By locator(String LocatorType, String LocatorValue)
-	{
-		By locator;
-		switch(LocatorType)
-		{
-		case "id":
-			locator = By.id(LocatorValue);
-			break;
-		case "name":
-			locator = By.name(LocatorValue);
-			break;
-		case "tagname":
-			locator = By.tagName(LocatorValue);
-			break;
-		case "class":
-			locator = By.className(LocatorValue);
-			break;
-		case "linktext":
-			locator = By.linkText(LocatorValue);
-			break;
-		case "partial":
-			locator = By.partialLinkText(LocatorValue);
-			break;
-		case "xpath":
-			locator = By.xpath(LocatorValue);
-			break;
-		case "csspath":
-			locator = By.cssSelector(LocatorValue);
-			break;
-		default:
-			return null;
-			
-		}
-		return locator;
-	}
+	
 	
 	
 }
