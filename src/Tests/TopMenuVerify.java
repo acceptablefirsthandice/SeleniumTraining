@@ -2,13 +2,15 @@ package Tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import PageObject.TopMenu;
 
 public class TopMenuVerify 
 {
 
-	public static void main(String[] args)
+	@Test
+	public void TopMeu_Verify()
 	{
 		WebDriver driver = new ChromeDriver();
 		

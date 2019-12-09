@@ -2,6 +2,7 @@ package Tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import PageObject.RegisterPage;
 import PageObject.TopMenu;
@@ -12,7 +13,8 @@ public class RegistrationTests {
 	static TopMenu tpo;
 	static RegisterPage rpo; 
 
-	public static void main(String[] args) 
+	@Test
+	public void register_user() 
 	{
 		driver = new ChromeDriver();
 		
