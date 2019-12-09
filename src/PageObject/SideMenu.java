@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import Utility.Element;
-import Utility.PageUtility;
 
 public class SideMenu 
 {
