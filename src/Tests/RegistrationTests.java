@@ -2,6 +2,7 @@ package Tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import PageObject.RegisterPage;
@@ -20,10 +21,25 @@ public class RegistrationTests {
 		
 		driver.get("http://newtours.demoaut.com/mercurywelcome.php");
 		
+		String expectedTitle ="Mercury - Home";
+		String actualTitle = driver.getTitle();
+		
+		if (expectedTitle.equals(actualTitle))
+			System.out.println("Title Matches");
+		else
+			System.out.println("Title doesnot match");
+		
+		
+		
+		//Assert.assertEquals(actualTitle, expectedTitle);
+		
 		tpo = new TopMenu(driver);
 		rpo = new RegisterPage(driver);
 		//click on register in the home page
 		tpo.register_click();
+		
+		
+		
 		
 		//adding registration fields in registration page
 		rpo.fname_enterText("name", "firstName", "Larry");
