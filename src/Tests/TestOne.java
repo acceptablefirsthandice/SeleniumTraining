@@ -41,9 +41,12 @@ public class TestOne {
 	}
 
 	
-	@Test(priority=2, enabled = false, groups = {"Regression"})
+	@Test(priority=2, enabled = true, groups = {"Regression"})
 	public void TC_002()
 	{
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.google.com");
+		System.out.println(driver.getTitle());
 		System.out.println("TestTwo in TestOne NG class");
 	}
 	
